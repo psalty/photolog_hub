@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta charset="UTF-8" />
+	<title> Welcome to Photo Hub </title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<link type='text/css' href='css/index_view.css' rel='stylesheet'/>
+	<link type='text/css' href='css/mbutton.css' rel='stylesheet'/>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// init image
+			
+			
+			
+		});
+	</script>
+	</head>
+<body>
+<div class="root_div_tile">
+	<div>
+		<div style="color:#000;font-size:20pt;">
+			Photolog Hub
+		</div>
+		<div>
+			<a class='minibutton' href='/?mode=tile'><span >All</span></a>
+			<a class='minibutton' href='info/faq.html'><span >?</span></a>
+			<a class='minibutton' href='http://psalty.tistory.com' ><span>B</span></a>
+		</div>
+		<div style="clear:both;padding-top:10px;">
+			<div class="tag_div_tile"></div>
+			
+			{% for obj_content in obj_contents %}
+			<div class="thumb_tile">
+				<div style="display:table;">
+					<div class="tile_block">
+						<div style="display:table-cell;">
+							<a href="{{ obj_content.origimg }}" ><img src="{{ obj_content.instax }}" border="0" /></a>
+						</div>
+					</div>
+					<div class="info_frame">
+						<div style="display:table-cell;text-align:right;">
+							<a href="http://{{obj_content.appname}}.appspot.com/view?type=mcontent&gkey={{obj_content.gkey}}#disqus_thread"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{%endfor%}
+		
+		</div>
+	</div>
+</div>
+	
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sfphotolog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+
+</body>
+</html>
